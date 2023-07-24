@@ -1,0 +1,61 @@
+##################  Calibration Parameters  ##################
+
+######### Split Multiview Calibration Video #########
+
+multiview_calibration_video_path : 'C:\\Users\\Goekay\\Desktop\\dummy_study_bonn\\source_video_multiview\\OBSRecording_T049_025_Rat_chase_1.5s.mkv'
+splitted_calibration_video_path : "C:\\Users\\Goekay\\Desktop\\test_code\\splitted_calibration_videos\\"
+
+#skip this part if you don't have multi view video#
+num_rows : 2
+num_cols : 2
+num_cams : 3
+##############
+
+######### Generate Frames For Calibration #########
+
+calibration_cam_0_path : "C:\\Users\\Goekay\\Desktop\\test_code\\splitted_calibration_videos\\cam_0.mp4"
+calibration_cam_1_path : "C:\\Users\\Goekay\\Desktop\\test_code\\splitted_calibration_videos\\cam_1.mp4"
+calibration_cam_2_path : "C:\\Users\\Goekay\\Desktop\\test_code\\splitted_calibration_videos\\cam_2.mp4"
+#calibration_cam_3_path : 'C:\\Users\\Goekay\\Desktop\\dummy_study_bonn\\participant_videos\\cam_3.mp4'
+#calibration_cam_4_path : 'C:\\Users\\Goekay\\Desktop\\dummy_study_bonn\\participant_videos\\cam_4.mp4'
+
+#Assuming cam_0 is the reference cam
+capture_seconds_cam0_cam1 : [43, 44, 45, 46, 48, 49, 51, 52, 57, 58]
+capture_seconds_cam0_cam2 : [12, 13, 15, 17, 19, 21, 23, 25, 28, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42]
+#capture_seconds_cam0_cam3 : [5,10,15,20]
+#capture_seconds_cam0_cam4 : [5,10,15,20]
+#capture_seconds_cam0_cam5 : [5,10,15,20]
+
+
+calibration_frames_output_folder : "C:\\Users\\Goekay\\Desktop\\test_code\\calibration_frames\\"
+
+#write intrinsic camera parameters
+parameter_folder : "C:\\Users\\Goekay\\Desktop\\test_code\\parameters\\"
+
+#path to paired 
+path_to_paired_0_1 : 'C:\\Users\\Goekay\\Desktop\\test_code\\calibration_frames\\paired_cam0_cam1\\*'
+path_to_paired_0_2 : 'C:\\Users\\Goekay\\Desktop\\test_code\\calibration_frames\\paired_cam0_cam2\\*'
+
+
+##################################
+
+
+#camera0: 4
+#camera1: 6
+#frame_width: 1280
+#frame_height: 720
+#mono_calibration_frames: 10
+#stereo_calibration_frames: 10
+#view_resize: 1
+#checkerboard_box_size_scale : 3.19
+#checkerboard_rows: 4
+#checkerboard_columns: 7
+#cooldown: 100
+
+
+#capture_seconds_cam0_cam1 : [45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 57, 58, 59]
+#capture_seconds_cam0_cam2 : [6, 62, 63, 64, 65, 122, 124,143]
+#capture_seconds_cam0_cam3 : [12, 13, 15, 17, 19, 21, 23, 25, 28, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42]
+#capture_seconds_cam0_cam4 : [85, 86, 87, 88, 89, 131, 132, 133, 134, 135, 136, 138, 139]
+#num_rows : 3
+#num_cols : 2
