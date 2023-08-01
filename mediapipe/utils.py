@@ -2,36 +2,22 @@ import numpy as np
 from scipy import linalg
 import cv2 as cv
 
-
-def DLT(P1, P2, P3, point1, point2, point3):
-    points = []
-    matrices = []
-
-    # Collect the points that have values and their corresponding projection matrices
-    if point1 != -1:
-        points.append(point1)
-        matrices.append(P1)
-    if point2 != -1:
-        points.append(point2)
-        matrices.append(P2)
-    if point3 != -1:
-        points.append(point3)
-        matrices.append(P3)
-
-
+def DLT(projection_matrices, points):
     # Construct the matrix A
     A = []
     for i in range(len(points)):
-        A.append(points[i][1]*matrices[i][2,:] - matrices[i][1,:])
-        A.append(matrices[i][0,:] - points[i][0]*matrices[i][2,:])
+        if points[i] != -1:
+            A.append(points[i][1] * projection_matrices[i][2, :] - projection_matrices[i][1, :])
+            A.append(projection_matrices[i][0, :] - points[i][0] * projection_matrices[i][2, :])
     A = np.array(A).reshape((-1, 4))
 
     # Solve for the homogeneous solution
     B = A.transpose() @ A
-    U, s, Vh = linalg.svd(B, full_matrices = False)
+    U, s, Vh = linalg.svd(B, full_matrices=False)
 
     # Return the inhomogeneous solution
-    return Vh[3,0:3]/Vh[3,3]
+    return Vh[3, 0:3] / Vh[3, 3]
+
 
 
 def read_intrinsics_parameters(path):
